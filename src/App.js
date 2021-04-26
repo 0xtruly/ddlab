@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider, useDispatch } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+
+import reduxStore from './redux/reduxStore';
+// Components
+import DashboardHome from './pages/home/Dashboard';
+import { GlobalStyle } from './components/shared/GlobalStyle';
+
+const { store, persistor } = reduxStore();
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <BrowserRouter>
+          <GlobalStyle />
+          <DashboardHome />
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
   );
 }
 
