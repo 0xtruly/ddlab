@@ -250,7 +250,7 @@ const DashboardHome = ({ showToolTip }) => {
                 ))}
               </div>
             </Container>
-            <Container display="grid" gridTemplateColumns="30% 70%" padding="5rem 1.5rem">
+            <Container display="grid" gridTemplateColumns="40% 58%" padding="5rem 1.5rem">
               <Container display="" padding="0">
                 <div>
                   <h4 className="font-bold text-blue-navy">Profitable Items</h4>
@@ -275,7 +275,8 @@ const DashboardHome = ({ showToolTip }) => {
                   </div>
                 </Card>
               </Container>
-              <Container display="" padding="0">
+              <Container display="flex" padding="0 1rem" verticalLine flexDirection="row">
+                <SimpleBarChart />
                 <SimpleBarChart />
               </Container>
             </Container>

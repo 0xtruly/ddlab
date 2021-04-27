@@ -22,6 +22,11 @@ export const Container = styled.div`
   justify-content: ${(props) => props.justifyContent};
   text-align: ${(props) => props.textAlign};
   grid-template-columns: ${(props) => props.gridTemplateColumns};
+  ${(props) => (props.verticalLine ? tw`divide-x divide divide-gray-200` : 'unset')};
+  border-left: 1px solid grey;
+  border-left-color: gainsboro;
+  border-right: 1px solid grey;
+  border-right-color: gainsboro;
 `;
 
 export const SearchContainer = styled.div`

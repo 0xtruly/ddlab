@@ -51,19 +51,19 @@ export default class SimpleBarChart extends PureComponent {
     return (
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
-          width={500}
+          width={100}
           height={300}
           data={data}
           margin={{
             top: 5,
             right: 30,
-            left: 20,
-            bottom: 5,
+            left: 10,
+            bottom: 14,
           }}
         >
           <Tooltip />
-          <Bar dataKey="pv" fill="#03a9f4" />
-          <Bar dataKey="uv" fill="#03a9f4" />
+          <Bar dataKey="pv" fill="#03a9f4" radius={[5, 5, 0, 0]} />
+          <Bar dataKey="uv" fill="#03a9f4" radius={[5, 5, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>
     );
