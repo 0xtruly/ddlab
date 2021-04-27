@@ -275,7 +275,7 @@ const DashboardHome = ({ showToolTip }) => {
                   </div>
                 </Card>
               </Container>
-              <Container display="flex" padding="0 1rem" verticalLine flexDirection="row">
+              <Container display="flex" padding="0 1rem" verticalLine flexDirection="row" bordered>
                 <SimpleBarChart />
                 <SimpleBarChart />
               </Container>

@@ -23,10 +23,10 @@ export const Container = styled.div`
   text-align: ${(props) => props.textAlign};
   grid-template-columns: ${(props) => props.gridTemplateColumns};
   ${(props) => (props.verticalLine ? tw`divide-x divide divide-gray-200` : 'unset')};
-  border-left: 1px solid grey;
-  border-left-color: gainsboro;
-  border-right: 1px solid grey;
-  border-right-color: gainsboro;
+  border-left: ${(props) => (props.bordered ? '1px solid grey' : '0')};
+  border-right: ${(props) => (props.bordered ? '1px solid grey' : '0')};
+  border-left-color: ${(props) => (props.bordered ? '#ded8d8' : 'unset')};
+  border-right-color: ${(props) => (props.bordered ? '#ded8d8' : 'unset')};
 `;
 
 export const SearchContainer = styled.div`
