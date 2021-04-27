@@ -21,22 +21,21 @@ const columns = css`
 
 export const TableHeaderText = styled.p`
   display: flex;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   justify-content: center;
-  text-align: center;
+  text-align: left;
   ${columns};
-  width: calc(100% / ${(props) => props.column});
-  min-width: calc(100% / ${(props) => props.column});
-  flex-grow: ${(props) => (props.column === 0 ? 1 : 0)};
+  ${tw`text-blue-900 font-bold `}
 `;
 
 export const Text = styled.p`
-  font-size: 1rem;
+  font-size: 0.8rem;
   margin: 0;
-  text-align: center;
+  text-align: left;
   word-wrap: break-word;
   font-weight: ${(props) => props.fontWeight};
   ${columns}
+  ${tw`text-blue-900 font-bold `}
 `;
 
 export const StatusContainer = styled.div`
@@ -62,6 +61,7 @@ export const Row = styled.div`
   /* color: var(--clr-text-primary-main); */
   width: 100%;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0 3rem;
   min-height: 50px;
+  margin-left: 1rem;
 `;
