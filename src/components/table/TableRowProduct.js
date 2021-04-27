@@ -8,6 +8,7 @@ const TableRowProduct = (props) => {
   const { name, variant, stock, price, status } = children;
   return (
     <Row>
+      <TableItem type="select" column={24} />
       <TableItem type="text" bold column={5}>
         {name}
       </TableItem>
@@ -20,7 +21,7 @@ const TableRowProduct = (props) => {
       <TableItem type="text" column={5}>
         ${price}
       </TableItem>
-      <TableItem type="status" column={5} status={capitalize(status)} />
+      <TableItem type="status" column={6} status={capitalize(status)} />
     </Row>
   );
 };

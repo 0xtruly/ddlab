@@ -42,7 +42,7 @@ export const StatusContainer = styled.div`
   ${columns};
   display: flex;
   color: white;
-  justify-content: center;
+  justify-content: left;
 `;
 
 export const StatusBlock = styled.p`
@@ -61,7 +61,18 @@ export const Row = styled.div`
   /* color: var(--clr-text-primary-main); */
   width: 100%;
   align-items: center;
-  padding: 0 3rem;
+  padding: 0 0.5rem;
   min-height: 50px;
-  margin-left: 1rem;
+  margin-left: 15px;
 `;
+
+export const SelectContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 0 0.5rem;
+  justify-content: center;
+  ${columns};
+  cursor: pointer;
+`;
+
+export const SelectText = styled.p``;

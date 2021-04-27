@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react';
-import { Text, StatusContainer, StatusBlock } from './TableTemplate.style';
+import { Text, StatusContainer, StatusBlock, SelectContainer } from './TableTemplate.style';
+import CheckIcon from '../../assets/icons/check';
+import UncheckIcon from '../../assets/icons/uncheck';
 
 const TableItem = (props) => {
   const { children, status, check, type, column } = props;
@@ -12,6 +14,12 @@ const TableItem = (props) => {
           <StatusContainer column={column}>
             <StatusBlock status={status}>{status}</StatusBlock>
           </StatusContainer>
+        );
+      case 'select':
+        return (
+          <SelectContainer column={column}>
+            <CheckIcon />
+          </SelectContainer>
         );
       default:
         break;
