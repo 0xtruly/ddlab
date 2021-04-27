@@ -64,6 +64,7 @@ export default class SimpleBarChart extends PureComponent {
           <Tooltip />
           <Bar dataKey="pv" fill="#03a9f4" radius={[5, 5, 0, 0]} />
           <Bar dataKey="uv" fill="#03a9f4" radius={[5, 5, 0, 0]} />
+          <Bar dataKey="uv" fill="#03a9f4" radius={[5, 5, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>
     );
