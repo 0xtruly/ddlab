@@ -1,48 +1,48 @@
 import React, { PureComponent } from 'react';
-import { BarChart, Bar, Tooltip, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, Tooltip, ResponsiveContainer, XAxis } from 'recharts';
 
 const data = [
   {
     name: 'Page A',
     uv: 4000,
     pv: 2400,
-    amt: 2400,
+    amt: 1,
   },
   {
     name: 'Page B',
     uv: 3000,
     pv: 1398,
-    amt: 2210,
+    amt: 2,
   },
   {
     name: 'Page C',
     uv: 2000,
     pv: 9800,
-    amt: 2290,
+    amt: 3,
   },
   {
     name: 'Page D',
     uv: 2780,
     pv: 3908,
-    amt: 2000,
+    amt: 4,
   },
   {
     name: 'Page E',
     uv: 1890,
     pv: 4800,
-    amt: 2181,
+    amt: 5,
   },
   {
     name: 'Page F',
     uv: 2390,
     pv: 3800,
-    amt: 2500,
+    amt: 6,
   },
   {
     name: 'Page G',
     uv: 3490,
     pv: 4300,
-    amt: 2100,
+    amt: 7,
   },
 ];
 
@@ -60,11 +60,14 @@ export default class SimpleBarChart extends PureComponent {
             left: 10,
             bottom: 14,
           }}
+          barGap={1}
+          barSize={6}
         >
+          <XAxis dataKey="amt" />
           <Tooltip />
           <Bar dataKey="pv" fill="#03a9f4" radius={[5, 5, 0, 0]} />
-          <Bar dataKey="uv" fill="#03a9f4" radius={[5, 5, 0, 0]} />
-          <Bar dataKey="uv" fill="#03a9f4" radius={[5, 5, 0, 0]} />
+          {/* <Bar dataKey="uv" fill="#03a9f4" radius={[5, 5, 0, 0]} />
+          <Bar dataKey="uv" fill="#03a9f4" radius={[5, 5, 0, 0]} /> */}
         </BarChart>
       </ResponsiveContainer>
     );
