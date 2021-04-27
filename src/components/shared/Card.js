@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import tw from 'twin.macro';
 
 const Container = styled.div`
   min-width: 300px;
-  width: ${(props) => props.width || '350px'};
+  width: ${(props) => props.width || '300px'};
   display: ${(props) => props.display || 'flex'};
   padding: ${(props) => props.padding || '1.2rem'};
   border-radius: ${(props) => props.radius || '0.3rem'};
@@ -14,11 +15,13 @@ const Container = styled.div`
   height: ${(props) => props.height};
   background: white;
   box-shadow: ${(props) => props.boxShadow};
+  ${tw`ml-2`};
+  flex-direction: ${(props) => props.flexDirection};
 `;
 
 export default class Card extends Component {
   render() {
-    const { children, border, boxShadow, display, padding, width } = this.props;
+    const { children, border, boxShadow, display, padding, width, flexDirection } = this.props;
     return (
       <Container
         border={border}
@@ -26,6 +29,7 @@ export default class Card extends Component {
         display={display}
         padding={padding}
         width={width}
+        flexDirection={flexDirection}
       >
         {children}
       </Container>

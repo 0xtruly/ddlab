@@ -235,25 +235,25 @@ const DashboardHome = ({ showToolTip }) => {
             </Container>
             <Container display="flex" flexDirection="column">
               <div>
-                <h4>Categories</h4>
+                <h4 className="font-bold text-blue-navy">Categories</h4>
               </div>
               <div className="flex flex-row justify-between text-center">
                 {products.map(({ item, image }, index) => (
                   <div className="flex mt-2 flex-col">
-                    <div key={index} className="flex flex-col">
+                    <div key={index} className="flex flex-col items-center">
                       <ImageCard symbol={image} />
-                      <div className="flex flex-col">
-                        <strong>{item}</strong>
+                      <div className="flex flex-col mt-3">
+                        <span className="text-sm">{item}</span>
                       </div>
                     </div>
                   </div>
                 ))}
               </div>
             </Container>
-            <Container display="grid" gridTemplateColumns="30% 70%">
-              <Container display="">
+            <Container display="grid" gridTemplateColumns="30% 70%" padding="5rem 1.5rem">
+              <Container display="" padding="0">
                 <div>
-                  <h4>Profitable Items</h4>
+                  <h4 className="font-bold text-blue-navy">Profitable Items</h4>
                 </div>
                 <Card boxShadow="2px 3px 5px 0px #ece5e5" width="200px">
                   <div>
@@ -275,7 +275,7 @@ const DashboardHome = ({ showToolTip }) => {
                   </div>
                 </Card>
               </Container>
-              <Container display="">
+              <Container display="" padding="0">
                 <SimpleBarChart />
               </Container>
             </Container>
@@ -285,75 +285,78 @@ const DashboardHome = ({ showToolTip }) => {
           </MainContent>
           <Aside>
             <div>
-              <p>Overview</p>
+              <p className="text-blue-navy font-bold text-sm ml-2">Overview</p>
               <Card boxShadow="2px 3px 5px 0px #ece5e5">
-                <div className="grid grid-row divide-y divide">
+                <div className="grid grid-row divide-y divide divide-gray-light">
                   <div className="flex flex-row justify-between">
-                    <div>
-                      <span>Total Orders</span>
-                      <h4>$342.7</h4>
+                    <div className="w-24 py-4">
+                      <p className="font-family text-blue-navy text-center">Total Orders</p>
+                      <h4 className="font-bold text-blue-navy text-center">$342.7</h4>
                     </div>
                     <CustomAreaChart stroke="#40966a" fill="#ecfdf5" />
                   </div>
-                  <div className="flex flex-row justify-between">
-                    <p>17 Total items</p>
-                    <button>View details</button>
+                  <div className="flex flex-row justify-between px-3">
+                    <p className="font-normal text-blue-navy mt-4">17 Total items</p>
+                    <button className="text-blue mt-4 font-medium">View details</button>
                   </div>
                 </div>
               </Card>
               <Card border="1px solid #e6e6e6">
-                <div className="grid grid-row divide-y divide">
+                <div className="grid grid-row divide-y divide divide-gray-light">
                   <div className="flex flex-row justify-between">
-                    <div>
-                      <span>Total Orders</span>
-                      <h4>$342.7</h4>
+                    <div className="w-24 py-4">
+                      <p className="font-normal text-blue-navy text-center">Total Orders</p>
+                      <h4 className="font-bold text-blue-navy text-center">$342.7</h4>
                     </div>
                     <CustomAreaChart stroke="#f04744" fill="#fef2f2" />
                   </div>
-                  <div className="flex flex-row justify-between">
-                    <p>17 Total items</p>
-                    <button>View details</button>
+                  <div className="flex flex-row justify-between px-3">
+                    <p className="font-normal text-blue-navy mt-4">17 Total items</p>
+                    <button className="text-blue mt-4 font-medium">View details</button>
                   </div>
                 </div>
               </Card>
             </div>
             <div>
-              <p>Latest Activities</p>
-              <Card border="1px solid #e6e6e6" display="block">
-                <div className="grid grid-cols divide-y divide p-2">
+              <p className="text-blue-navy font-bold text-sm ml-2">Latest Activities</p>
+              <Card border="1px solid #e6e6e6" flexDirection="column" padding="0.5rem">
+                <div className="grid grid-cols divide-y divide p-2 divide-gray-light">
                   <div className="flex justify-between my-2">
                     <div className="flex flex-row">
                       <ImageCard src={sonyImg} />
-                      <div className="flex flex-col">
-                        <strong>Sony 1000Xm3</strong>
-                        <span>Sep 12, 2021</span>
+                      <div className="flex flex-col ml-2">
+                        <h4 className="font-bold text-blue-navy text-center">Sony 1000Xm3</h4>
+                        <span className="text-sm">Sep 12, 2021</span>
                       </div>
                     </div>
-                    <span className="text-red-500">-$160</span>
+                    <span className="text-red-dark">-$160</span>
                   </div>
                   <div className="flex justify-between mt-2">
-                    <div className="flex flex-row">
+                    <div className="flex flex-row mt-4">
                       <ImageCard src={appleImg} />
-                      <div className="flex flex-col">
-                        <strong>iPhone 11 Pro</strong>
-                        <span>Feb 16, 2021</span>
+                      <div className="flex flex-col ml-2">
+                        <h4 className="font-bold text-blue-navy text-center">iPhone 11 Pro</h4>
+                        <span className="text-sm">Feb 16, 2021</span>
                       </div>
                     </div>
-                    <span className="text-red-500">-$160</span>
+                    <span className="text-green-dark mt-4">+$160</span>
                   </div>
                 </div>
+                <button className="bg-blue-lighter text-blue-dark px-16 py-4 border-none mt-4 rounded">
+                  See All Activities
+                </button>
               </Card>
             </div>
             <div>
-              <p>Sales Lists</p>
+              <p className="text-blue-navy font-bold text-sm ml-2">Sales Lists</p>
               <Card border="1px solid #e6e6e6" display="block">
                 <div className="grid grid-cols p-2">
                   <div className="flex justify-between mt-2">
                     <div className="flex flex-row">
                       <ImageCard symbol="👨🏻" />
                       <div className="flex flex-col">
-                        <strong>Supardi Hokya</strong>
-                        <span>ID: 567936354739</span>
+                        <h4 className="font-bold text-blue-navy text-center">Supardi Hokya</h4>
+                        <span className="text-sm ml-2">ID: 567936354739</span>
                       </div>
                     </div>
                   </div>
@@ -365,8 +368,8 @@ const DashboardHome = ({ showToolTip }) => {
                     <div className="flex flex-row">
                       <ImageCard symbol="👨‍🦳" />
                       <div className="flex flex-col">
-                        <strong>Supardi Hokya</strong>
-                        <span>ID: 567936354739</span>
+                        <h4 className="font-bold text-blue-navy text-center">Supardi Hokya</h4>
+                        <span className="text-sm ml-2">ID: 567936354739</span>
                       </div>
                     </div>
                   </div>
@@ -378,8 +381,8 @@ const DashboardHome = ({ showToolTip }) => {
                     <div className="flex flex-row">
                       <ImageCard symbol="👲" />
                       <div className="flex flex-col">
-                        <strong>Supardi Hokya</strong>
-                        <span>ID: 567936354739</span>
+                        <h4 className="font-bold text-blue-navy text-center">Supardi Hokya</h4>
+                        <span className="text-sm ml-2">ID: 567936354739</span>
                       </div>
                     </div>
                   </div>

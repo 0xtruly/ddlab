@@ -68,14 +68,14 @@ export default class CustomAreaChart extends PureComponent {
   render() {
     const { stroke, fill } = this.props;
     return (
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width="65%" height="90%">
         <AreaChart
           width={500}
           height={400}
           data={data}
           margin={{
-            top: 10,
-            right: 30,
+            top: 5,
+            right: 5,
             left: 0,
             bottom: 0,
           }}

@@ -8,9 +8,10 @@ export const Wrap = styled.div``;
 export const Main = styled.div`
   display: flex;
   justify-content: flex-end;
-  height: 100vh;
+  /* height: 100vh; */
   padding-top: 2rem;
   padding-left: 5rem;
+  ${tw`divide-x divide divide-gray-200`}
 `;
 
 export const Container = styled.div`
@@ -66,7 +67,7 @@ export const MainContent = styled.div`
 
 export const Aside = styled.div`
   display: flex;
-  height: 100vh;
+  /* height: 100vh; */
   background-color: white;
   /* width: 30%; */
   flex-direction: column;
