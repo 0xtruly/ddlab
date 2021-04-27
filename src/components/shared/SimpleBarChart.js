@@ -63,7 +63,14 @@ export default class SimpleBarChart extends PureComponent {
           barGap={1}
           barSize={6}
         >
-          <XAxis dataKey="amt" />
+          <XAxis
+            dataKey="amt"
+            axisLine={false}
+            tickLine={false}
+            tickMargin={10}
+            tickSize={10}
+            tick={{ fontSize: 10 }}
+          />
           <Tooltip />
           <Bar dataKey="pv" fill="#03a9f4" radius={[5, 5, 0, 0]} />
           {/* <Bar dataKey="uv" fill="#03a9f4" radius={[5, 5, 0, 0]} />
