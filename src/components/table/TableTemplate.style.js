@@ -64,6 +64,8 @@ export const Row = styled.div`
   padding: 0 0.5rem;
   min-height: 50px;
   margin-left: 15px;
+  border-bottom: 1px solid;
+  border-bottom-color: beige;
 `;
 
 export const SelectContainer = styled.div`

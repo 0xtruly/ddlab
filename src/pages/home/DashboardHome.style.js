@@ -27,6 +27,7 @@ export const Container = styled.div`
   border-right: ${(props) => (props.bordered ? '1px solid grey' : '0')};
   border-left-color: ${(props) => (props.bordered ? '#ded8d8' : 'unset')};
   border-right-color: ${(props) => (props.bordered ? '#ded8d8' : 'unset')};
+  height: ${(props) => props.height};
 `;
 
 export const SearchContainer = styled.div`

@@ -258,26 +258,44 @@ const DashboardHome = ({ showToolTip }) => {
                 <Card boxShadow="2px 3px 5px 0px #ece5e5" width="200px">
                   <div>
                     {items.map(({ title, price }, index) => (
-                      <div className="flex items-center justify-between">
+                      <div className="flex items-center justify-between py-1">
                         <div className="flex flex-row items-center justify-between">
-                          <span className="rounded-full h-12 w-12 flex items-center justify-center bg-blue-50">
+                          <span className="rounded-full h-12 w-12 flex items-center justify-center bg-blue-lighter mr-3">
                             {index + 1}
                           </span>
-                          <p>{title}</p>
+                          <p className="mr-20 font-bold text-blue-navy text-center">{title}</p>
                         </div>
                         <div>
-                          <span className="rounded-full py-1 px-2 bg-green-50 text-green-400 text-xs">
-                            {price}
-                          </span>
+                          {price.includes('+') ? (
+                            <span className="rounded-full py-1 px-2 bg-green-light text-green-dark text-xs">
+                              {price}
+                            </span>
+                          ) : (
+                            <span className="rounded-full py-1 px-2 bg-red-light text-red-dark text-xs">
+                              {price}
+                            </span>
+                          )}
                         </div>
                       </div>
                     ))}
                   </div>
                 </Card>
               </Container>
-              <Container display="flex" padding="0 1rem" verticalLine flexDirection="row" bordered>
-                <SimpleBarChart />
-                <SimpleBarChart />
+              <Container padding="0 1.5rem">
+                <div>
+                  <h4 className="font-bold text-blue-navy">Sales Statistics</h4>
+                </div>
+                <Container
+                  display="flex"
+                  padding="0 1rem"
+                  verticalLine
+                  flexDirection="row"
+                  bordered
+                  height="250px"
+                >
+                  <SimpleBarChart />
+                  <SimpleBarChart />
+                </Container>
               </Container>
             </Container>
             <Container>
